@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgStructureApi", "OrgStructureApi\OrgStructureApi.csproj", "{899953BD-5D0B-48C0-BFAB-16571A54546F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{899953BD-5D0B-48C0-BFAB-16571A54546F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899953BD-5D0B-48C0-BFAB-16571A54546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899953BD-5D0B-48C0-BFAB-16571A54546F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899953BD-5D0B-48C0-BFAB-16571A54546F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
