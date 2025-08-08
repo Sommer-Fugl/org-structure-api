@@ -19,7 +19,7 @@ public class ProjectsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var projects = _context.Projects
+        var projects = await _context.Projects
             .Include(p => p.Manager)
             .Include(p => p.Departments)
             .ToListAsync();

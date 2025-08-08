@@ -48,7 +48,7 @@ public class DivisionsController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = division.Id }, division);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, Division division)
     {
         if (id != division.Id) return BadRequest();
