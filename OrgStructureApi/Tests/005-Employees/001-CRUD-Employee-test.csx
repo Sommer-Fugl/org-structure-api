@@ -4,14 +4,12 @@
     Equal(201, createResponse.StatusCode());
 });
 
-// GetAllEmployees: Status code should be 200.
 tp.Test("GetAllEmployees: Status code should be 200.", () =>
 {
     var getAllResponse = tp.Responses["GetAllEpmloyees"];
     Equal(200, getAllResponse.StatusCode());
 });
 
-// GetAllEmployees: Response should include the created employee.
 tp.Test("GetAllEmployees: Response should include the created employee.", () =>
 {
     var jsonArray = tp.Responses["GetAllEpmloyees"].GetBody<System.Text.Json.JsonElement>();
@@ -32,20 +30,17 @@ tp.Test("GetAllEmployees: Response should include the created employee.", () =>
     True(found);
 });
 
-// UpdateEmployee: Status code should be 204.
 tp.Test("UpdateEmployee: Status code should be 204.", () =>
 {
     var statusCode = tp.Responses["UpdateEmployee"].StatusCode();
     Equal(204, statusCode);
 });
 
-// GetUpdatedEmployee: Status code should be 200.
 tp.Test("GetUpdatedEmployee: Status code should be 200.", () =>
 {
     Equal(200, tp.Responses["GetUpdateEmployee"].StatusCode());
 });
 
-// GetUpdatedEmployee: Title should be updated.
 tp.Test("GetUpdatedEmployee: Title should be updated.", () =>
 {
     var json = tp.Responses["GetUpdateEmployee"].GetBody<System.Text.Json.JsonElement>();
@@ -53,7 +48,6 @@ tp.Test("GetUpdatedEmployee: Title should be updated.", () =>
     Equal("Senior Developer", title);
 });
 
-// GetUpdatedEmployee: Phone should be updated.
 tp.Test("GetUpdatedEmployee: Phone should be updated.", () =>
 {
     var json = tp.Responses["GetUpdateEmployee"].GetBody<System.Text.Json.JsonElement>();
@@ -61,7 +55,6 @@ tp.Test("GetUpdatedEmployee: Phone should be updated.", () =>
     Equal("+421987654321", phone);
 });
 
-// DeleteEmployee: After deletion, employee should not be found.
 tp.Test("DeleteEmployee: After deletion, employee should not be found.", () =>
 {
     var response = tp.Responses["GetDeletedEmployee"];

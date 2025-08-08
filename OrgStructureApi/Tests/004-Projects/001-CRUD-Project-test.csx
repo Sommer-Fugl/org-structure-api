@@ -1,11 +1,9 @@
-﻿// CreateProject tests
-tp.Test("CreateProject: Status code should be 201.", () =>
+﻿tp.Test("CreateProject: Status code should be 201.", () =>
 {
     var createResponse = tp.Responses["CreateProject"];
     Equal(201, createResponse.StatusCode());
 });
 
-// GetAllProjects tests
 tp.Test("GetAllProjects: Status code should be 200.", () =>
 {
     var getAllResponse = tp.Responses["GetAllProjects"];
@@ -33,14 +31,12 @@ tp.Test("GetAllProjects: Response should include the created project.", () =>
     True(found);
 });
 
-// UpdateProject tests
 tp.Test("UpdateProject: Status code should be 204.", () =>
 {
     var statusCode = tp.Responses["UpdateProject"].StatusCode();
     Equal(204, statusCode);
 });
 
-// GetUpdateProject tests
 tp.Test("GetUpdateProject: Status code should be 200.", () =>
 {
     Equal(200, tp.Responses["GetUpdateProject"].StatusCode());
@@ -60,7 +56,6 @@ tp.Test("GetUpdateProject: Response code should remain the same.", () =>
     Equal("PROJ001", code);
 });
 
-// DeleteProject tests
 tp.Test("DeleteProject: After deletion, project should not be found.", () =>
 {
     var response = tp.Responses["GetDeletedProject"];
