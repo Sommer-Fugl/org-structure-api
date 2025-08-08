@@ -1,0 +1,169 @@
+﻿# @name CreateDivision
+POST http://localhost:5000/api/Divisions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Software Development",
+  "code": "DEPT001",
+  "managerId": 4,
+  "manager": {
+    "title": "Department Manager",
+    "firstName": "David",
+    "lastName": "Miller",
+    "phone": "+1-555-456-7890",
+    "email": "david.miller@acme.com"
+  },
+  "companyId": 1,
+  "company": {
+    "name": "Acme Corporation",
+    "code": "ACME001",
+    "directorId": 1,
+    "director": {
+      "title": "Chief Executive Officer",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "phone": "+1-555-123-4567",
+      "email": "alice.johnson@acme.com"
+    }
+  },
+  "projectId": 1,
+  "project": {
+    "name": "Project Phoenix",
+    "code": "PROJ001",
+    "managerId": 3,
+    "manager": {
+      "title": "Project Manager",
+      "firstName": "Carol",
+      "lastName": "Davis",
+      "phone": "+1-555-345-6789",
+      "email": "carol.davis@acme.com"
+    },
+    "divisionId": 1,
+    "division": {
+      "name": "Technology Division",
+      "code": "TECH001",
+      "managerId": 2,
+      "manager": {
+        "title": "Division Manager",
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "phone": "+1-555-234-5678",
+        "email": "bob.smith@acme.com"
+      },
+      "companyId": 1,
+      "company": {
+        "name": "Acme Corporation",
+        "code": "ACME001",
+        "directorId": 1,
+        "director": {
+          "title": "Chief Executive Officer",
+          "firstName": "Alice",
+          "lastName": "Johnson",
+          "phone": "+1-555-123-4567",
+          "email": "alice.johnson@acme.com"
+        },
+        "divisions": []
+      },
+      "projects": []
+    },
+    "departments": []
+  }
+}
+
+###
+# @name GetAllDivisions 
+GET http://localhost:5000/api/Divisions
+Accept: application/json
+
+###
+# @name UpdateDivision
+PUT http://localhost:5000/api/Divisions/{{CreateDivision.response.body.id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{CreateDivision.response.body.id}},
+  "name": "Software Development 0.2v",
+  "code": "DEPT001 0.2v",
+  "managerId": {{CreateDivision.response.body.managerId}},
+  "manager": {
+    "title": "Department Manager",
+    "firstName": "David",
+    "lastName": "Miller",
+    "phone": "+1-555-456-7890",
+    "email": "david.miller@acme.com"
+  },
+  "companyId": {{CreateDivision.response.body.companyId}},
+  "company": {
+    "name": "Acme Corporation",
+    "code": "ACME001",
+    "directorId": 1,
+    "director": {
+      "title": "Chief Executive Officer",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "phone": "+1-555-123-4567",
+      "email": "alice.johnson@acme.com"
+    }
+  },
+  "projectId": 1,
+  "project": {
+    "name": "Project Phoenix",
+    "code": "PROJ001",
+    "managerId": 3,
+    "manager": {
+      "title": "Project Manager",
+      "firstName": "Carol",
+      "lastName": "Davis",
+      "phone": "+1-555-345-6789",
+      "email": "carol.davis@acme.com"
+    },
+    "divisionId": 1,
+    "division": {
+      "name": "Technology Division",
+      "code": "TECH001",
+      "managerId": 2,
+      "manager": {
+        "title": "Division Manager",
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "phone": "+1-555-234-5678",
+        "email": "bob.smith@acme.com"
+      },
+      "companyId": 1,
+      "company": {
+        "name": "Acme Corporation",
+        "code": "ACME001",
+        "directorId": 1,
+        "director": {
+          "title": "Chief Executive Officer",
+          "firstName": "Alice",
+          "lastName": "Johnson",
+          "phone": "+1-555-123-4567",
+          "email": "alice.johnson@acme.com"
+        },
+        "divisions": []
+      },
+      "projects": []
+    },
+    "departments": []
+  }
+}
+
+###
+# @name GetUpdatedDivision
+GET http://localhost:5000/api/Divisions/{{CreateDivision.response.body.id}}
+Accept: application/json
+
+###
+# @name DeleteDivision
+DELETE http://localhost:5000/api/Divisions/{{CreateDivision.response.body.id}}
+Accept: application/json
+
+###
+# @name GetDeletedDivision
+GET http://localhost:5000/api/Divisions/{{CreateDivision.response.body.id}}
+Accept: application/json
+
+

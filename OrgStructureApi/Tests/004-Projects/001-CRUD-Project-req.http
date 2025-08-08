@@ -1,0 +1,228 @@
+﻿###
+# @name CreateProject
+POST http://localhost:5000/Projects
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Project Phoenix",
+  "code": "PROJ001",
+  "managerId": 58,
+  "manager": {
+    "title": "Project Manager",
+    "firstName": "Carol",
+    "lastName": "Davis",
+    "phone": "+1-555-345-6789",
+    "email": "carol.davis@acme.com"
+  },
+  "divisionId": 1,
+  "division": {
+    "name": "Technology Division",
+    "code": "TECH001",
+    "managerId": 1,
+    "manager": {
+      "title": "Division Manager",
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "phone": "+1-555-234-5678",
+      "email": "bob.smith@acme.com"
+    },
+    "companyId": 1,
+    "company": {
+      "name": "Acme Corporation",
+      "code": "ACME001",
+      "directorId": 1,
+      "director": {
+        "title": "Chief Executive Officer",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "phone": "+1-555-123-4567",
+        "email": "alice.johnson@acme.com"
+      },
+      "divisions": []
+    },
+    "projects": []
+  },
+  "departments": [
+    {
+      "name": "Software Development",
+      "code": "DEPT001",
+      "managerId": 1,
+      "manager": {
+        "title": "Department Manager",
+        "firstName": "David",
+        "lastName": "Miller",
+        "phone": "+1-555-456-7890",
+        "email": "david.miller@acme.com"
+      },
+      "projectId": 1,
+      "project": {
+        "name": "Project Phoenix",
+        "code": "PROJ001",
+        "managerId": 1,
+        "manager": {
+          "title": "Project Manager",
+          "firstName": "Carol",
+          "lastName": "Davis",
+          "phone": "+1-555-345-6789",
+          "email": "carol.davis@acme.com"
+        },
+        "divisionId": 1,
+        "division": {
+          "name": "Technology Division",
+          "code": "TECH001",
+          "managerId": 1,
+          "manager": {
+            "title": "Division Manager",
+            "firstName": "Bob",
+            "lastName": "Smith",
+            "phone": "+1-555-234-5678",
+            "email": "bob.smith@acme.com"
+          },
+          "companyId": 1,
+          "company": {
+            "name": "Acme Corporation",
+            "code": "ACME001",
+            "directorId": 1,
+            "director": {
+              "title": "Chief Executive Officer",
+              "firstName": "Alice",
+              "lastName": "Johnson",
+              "phone": "+1-555-123-4567",
+              "email": "alice.johnson@acme.com"
+            },
+            "divisions": []
+          },
+          "projects": []
+        },
+        "departments": []
+      }
+    }
+  ]
+}
+
+###
+# @name GetAllProjects
+GET http://localhost:5000/Projects
+Accept: application/json
+
+###
+# @name UpdateProject
+PUT http://localhost:5000/Projects/{{CreateProject.response.body.id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{CreateProject.response.body.id}},
+  "name": "Project Phoenix 0.1V",
+  "code": "PROJ001",
+  "managerId": 58,
+  "manager": {
+    "id": 58,
+    "title": "Project Manager",
+    "firstName": "Carol",
+    "lastName": "Davis",
+    "phone": "+1-555-345-6789",
+    "email": "carol.davis@acme.com"
+  },
+  "divisionId": 14,
+  "division": {
+    "id": 14,
+    "name": "Technology Division",
+    "code": "TECH001",
+    "managerId": 1,
+    "manager": {
+      "title": "Division Manager",
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "phone": "+1-555-234-5678",
+      "email": "bob.smith@acme.com"
+    },
+    "companyId": 1,
+    "company": {
+      "name": "Acme Corporation",
+      "code": "ACME001",
+      "directorId": 1,
+      "director": {
+        "title": "Chief Executive Officer",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "phone": "+1-555-123-4567",
+        "email": "alice.johnson@acme.com"
+      },
+      "divisions": []
+    },
+    "projects": []
+  },
+  "departments": [
+    {
+      "name": "Software Development",
+      "code": "DEPT001",
+      "managerId": 1,
+      "manager": {
+        "title": "Department Manager",
+        "firstName": "David",
+        "lastName": "Miller",
+        "phone": "+1-555-456-7890",
+        "email": "david.miller@acme.com"
+      },
+      "projectId": 1,
+      "project": {
+        "name": "Project Phoenix",
+        "code": "PROJ001",
+        "managerId": 1,
+        "manager": {
+          "title": "Project Manager",
+          "firstName": "Carol",
+          "lastName": "Davis",
+          "phone": "+1-555-345-6789",
+          "email": "carol.davis@acme.com"
+        },
+        "divisionId": 1,
+        "division": {
+          "name": "Technology Division",
+          "code": "TECH001",
+          "managerId": 1,
+          "manager": {
+            "title": "Division Manager",
+            "firstName": "Bob",
+            "lastName": "Smith",
+            "phone": "+1-555-234-5678",
+            "email": "bob.smith@acme.com"
+          },
+          "companyId": 1,
+          "company": {
+            "name": "Acme Corporation",
+            "code": "ACME001",
+            "directorId": 1,
+            "director": {
+              "title": "Chief Executive Officer",
+              "firstName": "Alice",
+              "lastName": "Johnson",
+              "phone": "+1-555-123-4567",
+              "email": "alice.johnson@acme.com"
+            },
+            "divisions": []
+          },
+          "projects": []
+        },
+        "departments": []
+      }
+    }
+  ]
+}
+
+###
+# @name GetUpdateProject
+GET http://localhost:5000/Projects/{{CreateProject.response.body.id}}
+Accept: application/json
+
+###
+# @name DeleteProject
+DELETE http://localhost:5000/Projects/{{CreateProject.response.body.id}}
+Accept: application/json
+
+###
+# @name GetDeletedProject
+GET http://localhost:5000/Projects/{{CreateProject.response.body.id}}
+Accept: application/json

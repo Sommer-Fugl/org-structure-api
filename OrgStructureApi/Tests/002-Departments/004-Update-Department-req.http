@@ -1,9 +1,0 @@
-﻿PUT http://localhost:5000/api/Departments/1
-Content-Type: application/json
-Accept: application/json
-
-{
-  "id": 1,
-  "name": "Advanced Research",
-  "managerId": 1
-}

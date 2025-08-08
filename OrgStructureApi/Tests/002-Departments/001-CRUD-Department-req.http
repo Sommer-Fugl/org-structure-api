@@ -1,0 +1,152 @@
+﻿# @name CreateDepartment
+POST http://localhost:5000/api/Departments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Department Name",
+  "code": "DeptCode",
+  "managerId": 1,
+  "manager": {
+    "title": "Mr.",
+    "firstName": "John",
+    "lastName": "Doe",
+    "phone": "123-456-7890",
+    "email": "john.doe@example.com"
+  },
+  "projectId": 1,
+  "project": {
+    "name": "Project Name",
+    "code": "ProjCode",
+    "managerId": 1,
+    "manager": {
+      "title": "Ms.",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "phone": "098-765-4321",
+      "email": "jane.smith@example.com"
+    },
+    "divisionId": 1,
+    "division": {
+      "name": "Division Name",
+      "code": "DivCode",
+      "managerId": 1,
+      "manager": {
+        "title": "Dr.",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "phone": "555-555-5555",
+        "email": "alice.johnson@example.com"
+      },
+      "companyId": 1,
+      "company": {
+        "name": "Company Name",
+        "code": "CompCode",
+        "directorId": 1,
+        "director": {
+          "title": "CEO",
+          "firstName": "Bob",
+          "lastName": "Brown",
+          "phone": "444-444-4444",
+          "email": "bob.brown@example.com"
+        },
+        "divisions": []
+      },
+      "projects": []
+    },
+    "departments": []
+  }
+}
+
+###
+
+# @name GetAllDepartments
+GET http://localhost:5000/api/Departments
+Accept: application/json
+
+###
+# @name UpdateDepartment
+PUT http://localhost:5000/api/Departments/{{CreateDepartment.response.body.id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{CreateDepartment.response.body.id}},
+  "name": "Department Name 2.0v",
+  "code": "DeptCode 2.0v",
+  "managerId": 67,
+  "manager": {
+    "id": 67,
+    "title": "Mr.",
+    "firstName": "John",
+    "lastName": "Doe",
+    "phone": "123-456-7890",
+    "email": "john.doe@example.com"
+  },
+  "projectId": 15,
+  "project": {
+    "id": 15,
+    "name": "Project Name",
+    "code": "ProjCode",
+    "managerId": 70,
+    "manager": {
+      "id": 70,
+      "title": "Ms.",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "phone": "098-765-4321",
+      "email": "jane.smith@example.com"
+    },
+    "divisionId": 17,
+    "division": {
+      "id": 17,
+      "name": "Division Name",
+      "code": "DivCode",
+      "managerId": 69,
+      "manager": {
+        "id": 69,
+        "title": "Dr.",
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "phone": "555-555-5555",
+        "email": "alice.johnson@example.com"
+      },
+      "companyId": 15,
+      "company": {
+        "id": 15,
+        "name": "Company Name",
+        "code": "CompCode",
+        "directorId": 70,
+        "director": {
+          "id": 70,
+          "title": "CEO",
+          "firstName": "Bob",
+          "lastName": "Brown",
+          "phone": "444-444-4444",
+          "email": "bob.brown@example.com"
+        },
+        "divisions": []
+      },
+      "projects": []
+    },
+    "departments": []
+  }
+}
+
+###
+
+# @name GetUpdatedDepartment
+GET http://localhost:5000/api/Departments/{{CreateDepartment.response.body.id}}
+Accept: application/json
+
+###
+
+# @name DeleteDepartment
+DELETE http://localhost:5000/api/Departments/{{CreateDepartment.response.body.id}}
+Accept: application/json
+
+###
+
+# @name GetDeletedDepartment
+GET http://localhost:5000/api/Departments/{{CreateDepartment.response.body.id}}
+Accept: application/json

@@ -1,0 +1,47 @@
+﻿# @name CreateEmployee
+POST http://localhost:5000/api/Employees
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Developer",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phone": "+421123456789",
+  "email": "john.doe@example.com"
+}
+
+###
+# @name GetAllEpmloyees
+GET http://localhost:5000/api/Employees
+Accept: application/json
+
+###
+# @name UpdateEmployee
+PUT http://localhost:5000/api/Employees/{{CreateEmployee.response.body.id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+"id": {{CreateEmployee.response.body.id}},
+"title": "Senior Developer",
+"firstName": "John",
+"lastName": "Doe",
+"phone": "+421987654321",
+"email": "john.doe@example.com"
+}
+
+###
+# @name GetUpdateEmployee
+GET http://localhost:5000/api/Employees/{{CreateEmployee.response.body.id}}
+Accept: application/json
+
+###
+# @name DeleteEmployee
+DELETE http://localhost:5000/api/Employees/{{CreateEmployee.response.body.id}}
+Accept: application/json
+
+###
+# @name GetDeletedEmployee
+GET http://localhost:5000/api/Employees/{{CreateEmployee.response.body.id}}
+Accept: application/json

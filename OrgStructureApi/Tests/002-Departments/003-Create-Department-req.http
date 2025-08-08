@@ -1,8 +1,0 @@
-﻿POST http://localhost:5000/api/Departments
-Content-Type: application/json
-Accept: application/json
-
-{
-  "name": "Research and Development",
-  "managerId": 1
-}

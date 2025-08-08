@@ -1,0 +1,192 @@
+﻿# @name CreateCompany
+POST http://localhost:5000/api/Companies
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Acme Corporation",
+  "code": "ACME001",
+  "directorId": 1,
+  "director": {
+    "title": "Chief Executive Officer",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "phone": "+1-555-123-4567",
+    "email": "alice.johnson@acme.com"
+  },
+  "divisions": [
+    {
+      "name": "Technology Division",
+      "code": "TECH001",
+      "managerId": 2,
+      "manager": {
+        "title": "Division Manager",
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "phone": "+1-555-234-5678",
+        "email": "bob.smith@acme.com"
+      },
+      "companyId": 1,
+      "company": {
+        "name": "Acme Corporation",
+        "code": "ACME001",
+        "directorId": 1,
+        "director": {
+          "title": "Chief Executive Officer",
+          "firstName": "Alice",
+          "lastName": "Johnson",
+          "phone": "+1-555-123-4567",
+          "email": "alice.johnson@acme.com"
+        }
+      },
+      "projects": [
+        {
+          "name": "Project Phoenix",
+          "code": "PROJ001",
+          "managerId": 3,
+          "manager": {
+            "title": "Project Manager",
+            "firstName": "Carol",
+            "lastName": "Davis",
+            "phone": "+1-555-345-6789",
+            "email": "carol.davis@acme.com"
+          },
+          "divisionId": 1,
+          "division": {
+            "name": "Technology Division",
+            "code": "TECH001",
+            "managerId": 2,
+            "manager": {
+              "title": "Division Manager",
+              "firstName": "Bob",
+              "lastName": "Smith",
+              "phone": "+1-555-234-5678",
+              "email": "bob.smith@acme.com"
+            },
+            "companyId": 1,
+            "company": {
+              "name": "Acme Corporation",
+              "code": "ACME001",
+              "directorId": 1,
+              "director": {
+                "title": "Chief Executive Officer",
+                "firstName": "Alice",
+                "lastName": "Johnson",
+                "phone": "+1-555-123-4567",
+                "email": "alice.johnson@acme.com"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+# @name GetAllCompanies
+GET http://localhost:5000/api/Companies
+Accept: application/json
+
+###
+# @name UpdateCompany
+PUT http://localhost:5000/api/Companies/{{CreateCompany.response.body.id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{CreateCompany.response.body.id}},
+  "name": "Acmere Corporation",
+  "code": "ACME00112",
+  "directorId": 37,
+  "director": {
+    "title": "Chief Executive Officer",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "phone": "+1-555-123-4567",
+    "email": "alice.johnson@acme.com"
+  },
+  "divisions": [
+    {
+      "name": "Technology Division",
+      "code": "TECH001",
+      "managerId": 38,
+      "manager": {
+        "title": "Division Manager",
+        "firstName": "Bob",
+        "lastName": "Smith",
+        "phone": "+1-555-234-5678",
+        "email": "bob.smith@acme.com"
+      },
+      "companyId": 8,
+      "company": {
+        "name": "Acme Corporation",
+        "code": "ACME001",
+        "directorId": 37,
+        "director": {
+          "title": "Chief Executive Officer",
+          "firstName": "Alice",
+          "lastName": "Johnson",
+          "phone": "+1-555-123-4567",
+          "email": "alice.johnson@acme.com"
+        }
+      },
+      "projects": [
+        {
+          "name": "Project Phoenix",
+          "code": "PROJ001",
+          "managerId": 3,
+          "manager": {
+            "title": "Project Manager",
+            "firstName": "Carol",
+            "lastName": "Davis",
+            "phone": "+1-555-345-6789",
+            "email": "carol.davis@acme.com"
+          },
+          "divisionId": 1,
+          "division": {
+            "name": "Technology Division",
+            "code": "TECH001",
+            "managerId": 2,
+            "manager": {
+              "title": "Division Manager",
+              "firstName": "Bob",
+              "lastName": "Smith",
+              "phone": "+1-555-234-5678",
+              "email": "bob.smith@acme.com"
+            },
+            "companyId": 1,
+            "company": {
+              "name": "Acme Corporation",
+              "code": "ACME001",
+              "directorId": 1,
+              "director": {
+                "title": "Chief Executive Officer",
+                "firstName": "Alice",
+                "lastName": "Johnson",
+                "phone": "+1-555-123-4567",
+                "email": "alice.johnson@acme.com"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+# @name GetUpdatedCompany
+GET http://localhost:5000/api/Companies/{{CreateCompany.response.body.id}}
+Accept: application/json
+
+###
+# @name DeleteCompany
+DELETE http://localhost:5000/api/Companies/{{CreateCompany.response.body.id}}
+Accept: application/json
+
+###
+
+# @name GetDeletedCompany
+GET http://localhost:5000/api/Companies/{{CreateCompany.response.body.id}}
+Accept: application/json

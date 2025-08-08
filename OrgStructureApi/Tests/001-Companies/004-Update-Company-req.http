@@ -1,9 +1,0 @@
-﻿PUT http://localhost:5000/api/Companies/1
-Content-Type: application/json
-Accept: application/json
-
-{
-  "id": 1,
-  "name": "TechCorp International",
-  "directorId": 1
-}
