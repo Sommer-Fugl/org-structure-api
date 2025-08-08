@@ -1,0 +1,9 @@
+﻿PUT http://localhost:5000/Projects/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "name": "AI Research - Phase 2",
+  "managerId": 1
+}

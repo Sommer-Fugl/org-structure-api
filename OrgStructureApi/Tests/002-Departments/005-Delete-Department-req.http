@@ -1,0 +1,2 @@
+﻿DELETE http://localhost:5000/api/Departments/1
+Accept: application/json

@@ -68,9 +68,4 @@ public class CompaniesController : ControllerBase
         await _context.SaveChangesAsync();
         return NoContent();
     }
-    
-    
-    
-    
-    
 }

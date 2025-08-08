@@ -1,0 +1,12 @@
+﻿PUT http://localhost:5000/api/Employees/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "title": "Senior Developer",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phone": "+421987654321",
+  "email": "john.doe@example.com"
+}

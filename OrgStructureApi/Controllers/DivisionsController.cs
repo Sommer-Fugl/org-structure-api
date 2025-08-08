@@ -68,20 +68,4 @@ public class DivisionsController : ControllerBase
         await _context.SaveChangesAsync();
         return NoContent();
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

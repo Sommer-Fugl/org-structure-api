@@ -1,0 +1,8 @@
+﻿POST http://localhost:5000/api/Divisions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Software Division",
+  "managerId": 1
+}
