@@ -10,7 +10,7 @@
   The API uses local SQL Server with this connection string (can be modified in [appsettings.json]()):
 3. Create and update database:
    ```bash
-   dotnet ef migrations add InitialCreat
+   dotnet ef migrations add InitialCreate
    dotnet ef database update
 5. Run the API:
     ```bash
